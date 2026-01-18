@@ -9,7 +9,7 @@ a,
 span,
 input,
 img {
-  @apply block
+  @apply block;
 }
 html {
   @apply scroll-smooth;
@@ -20,11 +20,282 @@ html {
 \*________________________________*/
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 ionicon {
   --ionicon-stroke-width: 50px;
+}
+.img-holder {
+  @apply overflow-hidden;
+  aspect-ratio: var(--width) / var(--height);
+}
+.img-cover {
+  @apply h-full
+  w-full
+  object-cover;
+}
+
+/*________________________________*\
+  #COMOPONENTS STYLE
+\*________________________________*/
+/**
+ * Button
+ */
+
+.btn {
+  @apply text-white
+  font-bold
+  uppercase
+  tracking-widest
+  text-sm
+  max-w-max
+  rounded-md
+  duration-200
+  
+  /* :hover */
+  hover:shadow-lg;
+}
+
+.btn-text {
+  @apply text-caf_noir
+  ring-butterscotch
+  ring-1
+  
+  /* :hover */
+  hover:shadow-lg;
+}
+
+/* dropdown */
+.dropdown {
+  @apply relative;
+}
+
+.dropdown-content {
+  @apply px-5
+  h-0
+text-alabaster
+  text-sm
+  space-y-1 
+  border-amber_alpha
+  border-b
+  transition-all
+  duration-200
+  ease-inExpo
+  invisible
+  overflow-hidden
+
+  /* responsive for md:1000px screen */
+  md:bg-papaya_whip
+  md:text-jet
+  md:absolute
+  md:top-10
+  md:-left-8
+  md:rounded-md;
+}
+
+.navbar-link:has(~ .dropdown.active) ion-icon {
+  @apply rotate-90;
+}
+
+.dropdown-content a {
+  @apply transition-colors
+  
+  /* :hover */
+  hover:text-butterscotch;
+}
+.dropdown.active .dropdown-content {
+  @apply visible
+  h-[184px];
+}
+/*________________________________*\
+  #HEADER STYLE
+\*________________________________*/
+.header {
+  @apply fixed 
+  top-0 
+  left-0 
+  w-full 
+  bg-caf_noir 
+  h-20 
+  z-30 
+  duration-200 
+  ease-inExpo
+
+  /* responsive for lg: 1200px */
+  lg:bg-transparent;
+}
+
+.header.active {
+  @apply shadow-shadowDark 
+  animate-fadeInDown
+
+  /* responsive for lg: 1200px */
+  lg:bg-caf_noir;
+}
+
+.header .container {
+  /* responsive for lg: 1200px */
+  @apply lg:w-2/4
+  lg:max-w-[calc(100%_-_600px)]
+  lg:mx-0
+  lg:py-7
+  lg:px-7
+
+  /* responsive for xl:1400px screen */
+  xl:w-full
+  xl:max-w-[calc(100%_-_666px)]
+  
+  /* responsive for xxl:1600px screen */
+  xxl:grid
+  xxl:grid-cols-3
+  xxl:mx-auto
+  xxl:max-w-[1650px];
+}
+
+
+/**
+ * navbar
+ */
+.navbar {
+  @apply bg-licorice
+  pt-20
+  z-50
+  fixed
+  top-0
+  right-0
+  h-screen
+  w-80
+  translate-x-full
+  transition-all
+  duration-200
+  ease-inExpo
+  invisible;
+}
+
+@media (min-width: 1000px) {
+  .navbar {
+    all: unset;
+  }
+}
+
+.navbar.active {
+  @apply translate-x-0
+  visible;
+}
+
+.nav-close-btn {
+  @apply absolute
+  top-5
+  right-3
+  w-10
+  h-10
+  grid
+  place-items-center
+  text-alabaster
+
+  /* responsive for md:1000px screen */
+  md:hidden;
+}
+
+.navbar-link {
+  @apply px-3
+  py-5
+  font-bold
+  text-alabaster
+  border-b
+  border-amber_alpha
+  transition-colors
+  cursor-pointer
+  
+  /* :hover */
+  hover:text-butterscotch
+
+  /* responsive for md:1000px screen */
+  md:p-0
+  md:border-0
+  /* responsive for xxl:1600px screen */
+  xxl:text-xl;
+}
+
+
+/**
+ * overlay
+ */
+.overlay {
+  @apply fixed
+  inset-0
+  backdrop-blur-sm
+  z-40
+  ease-inExpo
+  duration-75
+  invisible
+  opacity-0;
+}
+
+.overlay.active {
+  @apply visible
+  opacity-100
+  h-screen
+  w-screen;
+}
+
+/**
+ * cart
+ */
+
+.cart-toggler {
+  @apply relative
+  w-10 
+  h-10 
+  grid 
+  place-items-center
+  rounded-full
+  /* ::before */
+
+  before:content-['2']
+  before:absolute
+  before:w-5
+  before:h-5
+  before:rounded-full
+  before:text-sm
+  before:text-papaya_whip
+  before:bg-red
+  before:top-0
+  before:right-0
+
+  /* responsive for lg:1200px screen */
+  lg:bg-caf_noir;
+}
+
+.cart-modal {
+  @apply fixed
+  top-24
+  right-2
+  rounded-lg
+  py-3
+  px-2
+  max-w-72
+  shadow-[0_-4px_0_#dd9d4cff]
+  transition-all
+  origin-top
+  duration-75
+  ease-inExpo
+  invisible
+  opacity-0
+
+  /* responsive for sm:635px screen */
+  sm:right-14;
+  background: linear-gradient(359deg, #fde6b9, #fff3dcff);
+}
+.cart-modal.active {
+  @apply translate-y-0.5
+  visible
+  opacity-100;
+}
+
+.cart-modal .material-symbols-rounded {
+  font-variation-settings: "opsz" 20;
 }

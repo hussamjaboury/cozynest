@@ -1,54 +1,241 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 
-    -Primary Meta Tags 
+    <!-- 
+    - Primary Meta Tags 
   -->
-  <title>CozyNest - Handcrafted Fashion & Vintage Decor</title>
-  <meta name="title" content="CozyNest - Handcrafted Fashion & Vintage Decor">
-  <meta name="description" content="This is CozyNest - Handcrafted Fashion & Vintage Decor E-commerce Website made by codewithsadee.">
+    <title>CozyNest - Handcrafted Fashion & Vintage Decor</title>
+    <meta
+      name="title"
+      content="CozyNest - Handcrafted Fashion & Vintage Decor"
+    />
+    <meta
+      name="description"
+      content="This is CozyNest - Handcrafted Fashion & Vintage Decor E-commerce Website made by codewithsadee."
+    />
 
-  <!-- 
-    -favicon 
+    <!-- 
+    - favicon 
   -->
-  <link rel="shortcut icon" href="./assets/images/favicon-light.svg" type="svg+xml">
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-light.svg"
+      type="svg+xml"
+    />
 
-  <!-- 
-    -css link
+    <!-- 
+    - css link
   -->
-  <link href="./dist/style.css" rel="stylesheet">
+    <link href="./dist/style.css" rel="stylesheet" />
 
-  <!--
-    -google font link
+    <!--
+    - google font link
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600700;&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!--
-    -matrial icons link
+    <!--
+    - matrial icons link
   -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block" />
-  
-  <!--
-    -script link
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close,menu,shopping_cart_checkout&display=block"
+    />
+
+    <!--
+    - script link
   -->
-  <script src="./assets/js/script.js" defer></script>
-</head>
-<body class="bg-papaya_whip text-jet font-secondary">
-  <h1 class="text-3xl font-bold underline text-red">
-    Hello world!
-  </h1>
+    <script src="./assets/js/script.js" defer></script>
+  </head>
 
-
-  <!--
-    -ionIcon link
+  <body class="bg-papaya_whip text-jet font-secondary">
+    <!--
+    - Header
   -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-</body>
+    <div class="header active" data-header>
+      <div
+        class="container relative flex items-center justify-between h-full px-3 py-5 mx-auto"
+      >
+        <a href="" class="logo">
+          <img
+            src="./assets/images/logo-light.svg"
+            height="16"
+            width="129"
+            alt="CozyNest"
+          />
+        </a>
+        <nav class="navbar" data-navbar>
+          <button
+            class="nav-close-btn"
+            aria-label="close menu"
+            data-nav-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+          <ul class="md:flex md:gap-3 md:items-center xl:gap-7">
+            <li><a href="#home" class="navbar-link">HOME</a></li>
+            <li>
+              <button
+                class="navbar-link w-full flex items-center gap-2"
+                data-dropdown-toggler
+              >
+                SHOP
+                <ion-icon
+                  name="caret-forward-outline"
+                  aria-hidden="true"
+                  class="duration-200"
+                ></ion-icon>
+              </button>
+              <div class="dropdown" data-dropdown>
+                <div class="dropdown-content">
+                  <a href="" class="pt-2">All Products</a>
+                  <a href="">Clothing</a>
+                  <a href="">Candles</a>
+                  <a href="">Accessories</a>
+                  <a href="">Bags</a>
+                  <a href="">Clocks</a>
+                  <a href="" class="pb-2">SALE 🏷️</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="" class="navbar-link">BLOG</a></li>
+            <li><a href="" class="navbar-link">LATEST</a></li>
+            <li><a href="" class="navbar-link">INFO</a></li>
+          </ul>
+        </nav>
+        <div
+          class="rounded-md flex gap-3 items-center lg:fixed lg:right-5 lg:top-5 overflow-hidden"
+        >
+          <button
+            class="cart-toggler"
+            aria-label="cart toggler"
+            data-cart-toggler
+          >
+            <span
+              class="material-symbols-rounded text-papaya_whip"
+              aria-hidden="true"
+            >
+              shopping_cart_checkout
+            </span>
+          </button>
+          <div class="relative">
+            <div class="cart-modal" data-cart-modal>
+              <ul>
+                <li class="flex gap-2 pr-2">
+                  <figure class="img-holder rounded-md h-20 w-20 shrink-0">
+                    <img
+                      src="./assets/images/cart-1.jpg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="Handmade Mug"
+                      class="img-cover"
+                    />
+                  </figure>
+                  <div>
+                    <span class="text-caf_noir text-sm font-bold"
+                      >Handmade painted coffee mug</span
+                    >
+                    <div class="flex items-center gap-1 text-[13px]">
+                      <p>1 ×</p>
+                      <p>$85.00</p>
+                    </div>
+                  </div>
+                  <button
+                    aria-label="remove Product"
+                    class="h-5 w-5 flex-shrink-0 mb-auto"
+                  >
+                    <span class="material-symbols-rounded" aria-hidden="true"
+                      >close
+                    </span>
+                  </button>
+                </li>
+                <div
+                  class="divider bg-butterscotch_light w-full h-[1px] my-3"
+                ></div>
+                <li class="flex gap-2 pr-2">
+                  <figure class="img-holder rounded-md h-20 w-20 shrink-0">
+                    <img
+                      src="./assets/images/cart-2.jpg"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      alt="Handmade Mug"
+                    />
+                  </figure>
+                  <div>
+                    <span class="text-caf_noir text-sm font-bold"
+                      >Vintage Antique & Candle Holder</span
+                    >
+                    <div class="flex items-center gap-1 text-[13px]">
+                      <p>1 ×</p>
+                      <p>$990.00</p>
+                    </div>
+                  </div>
+                  <button
+                    aria-label="remove Product"
+                    class="h-5 w-5 flex-shrink-0 mb-auto"
+                  >
+                    <span class="material-symbols-rounded" aria-hidden="true"
+                      >close
+                    </span>
+                  </button>
+                </li>
+                <div
+                  class="divider bg-butterscotch_light w-full h-[1px] my-3"
+                ></div>
+                <div class="flex gap-2 items-center justify-center">
+                  <a
+                    href=""
+                    aria-label="checkout"
+                    class="btn bg-butterscotch_light py-3 px-4"
+                    >checkout</a
+                  >
+                  <a
+                    href=""
+                    aria-label="view cart"
+                    class="btn btn-text py-3 px-4"
+                    >view cart</a
+                  >
+                </div>
+              </ul>
+            </div>
+          </div>
+          <button
+            data-nav-toggler
+            aria-label="open menu"
+            class="h-10 w-10 grid place-items-center md:hidden"
+          >
+            <span
+              class="material-symbols-rounded text-papaya_whip"
+              aria-hidden="true"
+            >
+              menu
+            </span>
+          </button>
+        </div>
+        <div class="overlay" data-overlay data-nav-toggler></div>
+      </div>
+    </div>
+    <!--
+    - ionIcon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
