@@ -1,9 +1,7 @@
 // add event on multiple elements
 const addEventOnElem = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, (_) => {
-      callback;
-    });
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener(eventType, callback);
   }
 };
 
@@ -26,13 +24,15 @@ const navbar = document.querySelector("[data-navbar");
 const overlay = document.querySelector("[data-overlay]");
 const navCloseBtn = document.querySelector(".nav-close-btn");
 
-addEventOnElem(navTogglers, "click", toggleNavbar);
-
-function toggleNavbar() {
+let toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("active");
 }
+
+addEventOnElem(navTogglers, "click", toggleNavbar);
+
+
 
 // cart show/hide logic
 const cartToggler = document.querySelector("[data-cart-toggler]");
