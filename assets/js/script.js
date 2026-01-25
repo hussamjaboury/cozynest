@@ -28,11 +28,9 @@ let toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("active");
-}
+};
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
-
-
 
 // cart show/hide logic
 const cartToggler = document.querySelector("[data-cart-toggler]");
@@ -50,3 +48,45 @@ const activeHeader = function () {
 };
 
 window.addEventListener("scroll", activeHeader);
+
+// Custom slider
+
+const $sliderContainers = document.querySelectorAll("[data-slider-container]");
+
+function sliderInitial($sliderContainer) {
+  const slider = $sliderContainer.querySelector("[data-slider]");
+  const PrevBtn = $sliderContainer.querySelector("[data-prev-btn]");
+  const NextBtn = $sliderContainer.querySelector("[data-next-btn]");
+
+  function nextSlide() {
+    slider.appendChild(slider.firstElementChild);
+  }
+  NextBtn.addEventListener("click", nextSlide);
+
+  function prevslide() {
+    slider.prepend(slider.lastElementChild);
+  }
+  PrevBtn.addEventListener("click", prevslide);
+
+  let intervalID;
+  function autoSlide() {
+    intervalID = setInterval(() => {
+      nextSlide();
+    }, 2000);
+  }
+  autoSlide();
+
+  $sliderContainer.addEventListener("mouseover", () => {
+    clearInterval(intervalID);
+  });
+
+  $sliderContainer.addEventListener("mouseout", () => {
+    autoSlide();
+  });
+}
+
+
+
+for (let i = 0; i < $sliderContainers.length; i++) {
+  sliderInitial($sliderContainers[i]);
+}
