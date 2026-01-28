@@ -37,7 +37,9 @@ ionicon {
   w-full
   object-cover;
 }
-
+.grid-list > li:nth-child(even):not(.off-card) {
+  margin-left: auto;
+}
 /*________________________________*\
   #COMOPONENTS STYLE
 \*________________________________*/
